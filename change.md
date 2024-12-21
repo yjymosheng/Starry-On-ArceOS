@@ -17,7 +17,7 @@
     7. src/main.rs 的loader::list_app()无用了,注释掉
 
 
-syscall实现:
+# syscall实现:
 
     1. 原arceos有许多已实现的syscall位于/home/mosheng/github/Starry-On-ArceOS/.arceos/api 可以直接调用(不过耦合太深,先选择性忽略吧)
     
