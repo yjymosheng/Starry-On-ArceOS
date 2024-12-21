@@ -17,7 +17,8 @@ kernel-elf-parser = "0.1.0"
 num_enum = { version = "0.7", default-features = false }
 syscalls = { version = "0.6", default-features = false }
 
-axstd = { git = "https://github.com/arceos-org/arceos.git", features = ["paging"] }
+axfs = { path = "./.arceos/modules/axfs" }
+axstd = { path = "./.arceos/ulib/axstd", features = ["paging","fs"] }
 axhal = { git = "https://github.com/arceos-org/arceos.git", features = ["uspace"] }
 axmm = { git = "https://github.com/arceos-org/arceos.git" }
 axtask = { git = "https://github.com/arceos-org/arceos.git" }

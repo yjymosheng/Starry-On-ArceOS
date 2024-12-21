@@ -7,3 +7,4 @@
 apps/*/build/
 **/target/
 apps/**/Cargo.lock
+disk.img

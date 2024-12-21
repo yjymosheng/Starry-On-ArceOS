@@ -1,0 +1,15 @@
+brk
+close
+dup
+dup2
+exit
+fstat
+getcwd
+getpid
+gettimeofday
+open
+openat
+read
+test_echo
+uname
+write

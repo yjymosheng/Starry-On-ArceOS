@@ -1,0 +1,17 @@
+chdir
+clone
+execve
+fork
+getdents
+getppid
+mkdir_
+mmap
+mount
+munmap
+pipe
+times
+umount
+unlink
+wait
+waitpid
+yield

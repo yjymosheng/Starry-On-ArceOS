@@ -1,8 +1,8 @@
 AX_ROOT ?= $(PWD)/.arceos
-AX_TESTCASE ?= nimbos
-ARCH ?= x86_64
+AX_TESTCASE ?= riscv64
+ARCH ?= riscv64
 AX_TESTCASES_LIST=$(shell cat ./apps/$(AX_TESTCASE)/testcase_list | tr '\n' ',')
-FEATURES ?= fp_simd
+FEATURES ?= fp_simd,fs
 RUSTDOCFLAGS := -Z unstable-options --enable-index-page -D rustdoc::broken_intra_doc_links -D missing-docs
 
 ifneq ($(filter $(MAKECMDGOALS),doc_check_missing),) # make doc_check_missing
@@ -23,7 +23,7 @@ test:
 	@./scripts/app_test.sh
 
 build run justrun debug disasm: ax_root
-	@make -C $(AX_ROOT) A=$(PWD) FEATURES=$(FEATURES) $@
+	@make -C $(AX_ROOT) A=$(PWD) FEATURES=$(FEATURES) NET=y BLK=y $@
 
 clean: ax_root
 	@make -C $(AX_ROOT) A=$(PWD) clean

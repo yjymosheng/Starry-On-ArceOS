@@ -1,3 +1,5 @@
+use core::ffi::c_int;
+
 use axerrno::LinuxError;
 use axhal::paging::MappingFlags;
 use axtask::{current, TaskExtRef};
@@ -94,5 +96,12 @@ pub(crate) fn sys_mmap(
         aspace.map_alloc(start_addr, length, permission_flags.into(), false)?;
 
         Ok(start_addr.as_usize())
+    })
+}
+
+
+pub(crate) fn sys_brk(brk: usize) -> c_int {
+    syscall_body!(sys_brk, {
+        Ok(brk)
     })
 }
